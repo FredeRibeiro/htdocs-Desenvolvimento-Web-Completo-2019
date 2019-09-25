@@ -1,6 +1,6 @@
 <?php 
 
-public static function validarCPF($cpf):bool{
+function validarCPF($cpf):bool{
 		//Verifica se um  numero foi informado
 		if (empty($cpf)) return false;
 

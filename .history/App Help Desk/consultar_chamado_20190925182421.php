@@ -6,7 +6,7 @@
   $chamados = array();
 
   //abrir o arquivo.hd
-  $arquivo = fopen('../../App Help Desk/arquivo.hd', 'r');
+  $arquivo = fopen('../../app_help_desk/arquivo.hd', 'r');
 
   //enquanto houver registros (linhas) a serem recuperados
   while(!feof($arquivo)) { //testa pelo fim de um arquivo
@@ -71,7 +71,7 @@
                   if($_SESSION['perfil_id'] == 2) {
                     //só vamos exibir o chamado, se ele foi criado pelo usuário
                     if($_SESSION['id'] != $chamado_dados[0]) {
-                      continue;
+                      return false;;
                     }
                   }
 

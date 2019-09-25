@@ -1,5 +1,11 @@
-<? require_once "validador_acesso.php" ?>
+<?php
 
+  session_start();
+  if(!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
+    header('Location: index.php?login=erro2');
+  }
+
+?>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -23,11 +29,6 @@
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="logoff.php">SAIR</a>
-        </li>
-      </ul>
     </nav>
 
     <div class="container">    
@@ -42,15 +43,15 @@
               <div class="row">
                 <div class="col">
                   
-                  <form method="post" action="registra_chamado.php">
+                  <form>
                     <div class="form-group">
                       <label>Título</label>
-                      <input name="titulo" type="text" class="form-control" placeholder="Título">
+                      <input type="text" class="form-control" placeholder="Título">
                     </div>
                     
                     <div class="form-group">
                       <label>Categoria</label>
-                      <select name="categoria" class="form-control">
+                      <select class="form-control">
                         <option>Criação Usuário</option>
                         <option>Impressora</option>
                         <option>Hardware</option>
@@ -61,12 +62,12 @@
                     
                     <div class="form-group">
                       <label>Descrição</label>
-                      <textarea name="descricao" class="form-control" rows="3"></textarea>
+                      <textarea class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="row mt-5">
                       <div class="col-6">
-                        <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
+                        <button class="btn btn-lg btn-warning btn-block" type="submit">Voltar</button>
                       </div>
 
                       <div class="col-6">
