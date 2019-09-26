@@ -1,35 +1,33 @@
 <?php
-/**
-  * summary
-  */
- class Pessoa
- {
-     /**
-      * summary
-      */
-     public function __construct()
-     {
-         echo 'Objeto Iniciado';
-         $this->nome = $nome;
-     }
 
-     public function __destruct(){
-     	echo 'Objeto Removido';
-     }
+	class Pessoa {
 
-     public function __get($atributo){
-     	return $this->$atributo;
-     }
+		public $nome = null;
 
-     public function correr()
-     {
-     	return $this->__get('nome').'está correndo';
-     	
-     }
- } 
+		function __construct($nome) {
+			echo 'Objeto iniciado';
+			$this->nome = $nome;
+		}
 
- $pessoa = new Pessoa('Jorge');
- echo '<br> Nome: '.pessoa->__get('nome');
- echo '<br>'.pessoa->correr();
- echo '<br>';
- ?>
+		function __destruct() {
+			echo 'Objeto removido';
+		}
+
+		function __get($atributo) {
+			return $this->$atributo;
+		}
+
+		function correr() {
+			return $this->__get('nome') . ' está correndo';
+		}
+	}
+
+	$pessoa = new Pessoa('Jorge');
+	echo '<br />Nome: ' . $pessoa->__get('nome');
+	echo '<br />' . $pessoa->correr();
+
+	echo '<br />';
+	//unset($pessoa); //proposital
+
+
+?>
