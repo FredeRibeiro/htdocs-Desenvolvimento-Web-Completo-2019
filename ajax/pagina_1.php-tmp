@@ -1,0 +1,2 @@
+
+Warning: file_get_contents(C:\xampp\htdocs\ajax\pagina_1.php): failed to open stream: No such file or directory in C:\Users\frede\AppData\Roaming\Sublime Text 3\Packages\PHPTools\php.tools\codeFormatter.php on line 1736
